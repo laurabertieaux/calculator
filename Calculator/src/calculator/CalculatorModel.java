@@ -74,6 +74,7 @@ public class CalculatorModel implements CalculatorModelInterface {
 	@Override
 	public void drop() {
 		Double a;
+		
 		a = accu.pop();
 	}
 
