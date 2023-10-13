@@ -10,7 +10,7 @@ public class CalculatorMain {
 		a.push(0.5);
 		a.push(90);
 		
-		a.clear();
+		a.add();
 		Double b = a.pop();
 		System.out.println(b);
 	}
