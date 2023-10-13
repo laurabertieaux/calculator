@@ -45,7 +45,7 @@ public class CalculatorModel implements CalculatorModelInterface {
 	@Override
 	public void pop() {
 		// TODO Auto-generated method stub
-		
+		accu.pop();
 	}
 
 	@Override
