@@ -4,13 +4,17 @@ import java.util.Stack;
 
 public class CalculatorModel implements CalculatorModelInterface {
 	
-	private  Stack accu;
+	private  Stack<Double> accu;
+	
+	public CalculatorModel(Stack accu) {
+		this.accu=accu;
+	}
 
 	@Override
 	public void add() {
 		// TODO Auto-generated method stub
-		double a;
-		double b;
+		Double a;
+		Double b;
 		a = accu.pop();
 		b = accu.pop();
 		accu.push(a+b);
