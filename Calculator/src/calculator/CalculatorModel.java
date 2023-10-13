@@ -8,6 +8,7 @@ public class CalculatorModel implements CalculatorModelInterface {
 	
 	public CalculatorModel(Stack accu) {
 		this.accu=accu;
+		
 	}
 
 	@Override
