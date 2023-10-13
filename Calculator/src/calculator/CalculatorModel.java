@@ -9,61 +9,84 @@ public class CalculatorModel implements CalculatorModelInterface {
 	@Override
 	public void add() {
 		// TODO Auto-generated method stub
+		double a;
+		double b;
+		a = accu.pop();
+		b = accu.pop();
+		accu.push(a+b);
 		
 	}
 
 	@Override
 	public void substract() {
 		// TODO Auto-generated method stub
-		
+		double a;
+		double b;
+		a = accu.pop();
+		b = accu.pop();
+		accu.push(b-a);
 	}
 
 	@Override
 	public void multiply() {
 		// TODO Auto-generated method stub
-		
+		double a;
+		double b;
+		a = accu.pop();
+		b = accu.pop();
+		accu.push(a*b);
 	}
 
 	@Override
 	public void divide() {
 		// TODO Auto-generated method stub
-		
+		double a;
+		double b;
+		a = accu.pop();
+		b = accu.pop();
+		accu.push(b/a);
 	}
 
 	@Override
 	public void opposite() {
 		// TODO Auto-generated method stub
-		
+		double a;
+		a = accu.pop();
+		accu.push(-1*a);
 	}
 
 	@Override
-	public void push() {
+	public void push(double a) {
 		// TODO Auto-generated method stub
-		
+		accu.push(a);
 	}
 
 	@Override
 	public void pop() {
-		// TODO Auto-generated method stub
 		accu.pop();
 	}
 
 	@Override
 	public void drop() {
-		// TODO Auto-generated method stub
-		
+		double a;
+		a = accu.pop();
 	}
 
 	@Override
 	public void swap() {
 		// TODO Auto-generated method stub
-		
+		double a;
+		double b;
+		a = accu.pop();
+		b = accu.pop();
+		accu.push(a);
+		accu.push(b);
 	}
 
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
-		
+		accu.clear();
 	}
 	
 }
