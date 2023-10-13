@@ -6,10 +6,10 @@ public class CalculatorModel implements CalculatorModelInterface {
 	
 	private  Stack<Double> accu;
 	
-	public CalculatorModel(Stack accu) {
-		this.accu=accu;
-		
-	}
+	 // Constructeur par défaut qui crée une pile vide
+    public CalculatorModel() {
+        accu = new Stack<Double>();
+    }
 
 	@Override
 	public void add() {
@@ -67,13 +67,13 @@ public class CalculatorModel implements CalculatorModelInterface {
 	}
 
 	@Override
-	public void pop() {
-		accu.pop();
+	public Double pop() {
+		return accu.pop();
 	}
 
 	@Override
 	public void drop() {
-		double a;
+		Double a;
 		a = accu.pop();
 	}
 
