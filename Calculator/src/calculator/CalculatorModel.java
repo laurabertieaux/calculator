@@ -8,7 +8,7 @@ public class CalculatorModel implements CalculatorModelInterface {
 	private Stack<Double> pile;
 	
 	 // Constructeur par défaut qui crée une pile vide
-    public CalculatorModel() {
+    public CalculatorModel() { 
         accu = new Stack<Double>();
     }
 
