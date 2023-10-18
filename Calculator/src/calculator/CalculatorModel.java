@@ -5,14 +5,16 @@ import java.util.Stack;
 public class CalculatorModel implements CalculatorModelInterface {
 	
 
-	private  double accu;
+	private  Double accu;
 	private Stack<Double> pile;
 	
 	 // Constructeur par défaut qui crée une pile vide
 
     public CalculatorModel() { 
-        accu = new Stack<Double>();
-
+        pile = new Stack<Double>();
+        accu = 0.0 ;
+    }
+        
 
 	@Override
 	public void add() {
@@ -50,35 +52,34 @@ public class CalculatorModel implements CalculatorModelInterface {
 		// TODO Auto-generated method stub
 		double a;
 		double b;
-		a = accu.pop();
-		b = accu.pop();
-		accu.push(b/a);
+		a = pile.pop();
+		b = pile.pop();
+		pile.push(b/a);
 	}
 
 	@Override
 	public void opposite() {
 		// TODO Auto-generated method stub
 		double a;
-		a = accu.pop();
-		accu.push(-1*a);
+		a = pile.pop();
+		pile.push(-1*a);
 	}
 
 	@Override
-	public void push(double a) {
+	public void push() {
 		// TODO Auto-generated method stub
-		accu.push(a);
+		pile.push(a);
 	}
 
 	@Override
 	public Double pop() {
-		return accu.pop();
+		return pile.pop();
 	}
 
 	@Override
 	public void drop() {
 		Double a;
-		
-		a = accu.pop();
+		a = pile.pop();
 	}
 
 	@Override
@@ -86,16 +87,16 @@ public class CalculatorModel implements CalculatorModelInterface {
 		// TODO Auto-generated method stub
 		double a;
 		double b;
-		a = accu.pop();
-		b = accu.pop();
-		accu.push(a);
-		accu.push(b);
+		a = pile.pop();
+		b = pile.pop();
+		pile.push(a);
+		pile.push(b);
 	}
 
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
-		accu.clear();
+		pile.clear();
 	}
 	
 }
