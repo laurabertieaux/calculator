@@ -40,9 +40,9 @@ public class CalculatorModel implements CalculatorModelInterface {
 		// TODO Auto-generated method stub
 		double a;
 		double b;
-		a = accu.pop();
-		b = accu.pop();
-		accu.push(a*b);
+		a = pile.pop();
+		b = pile.pop();
+		pile.push(a*b);
 	}
 
 	@Override
