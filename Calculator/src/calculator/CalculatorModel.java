@@ -4,14 +4,15 @@ import java.util.Stack;
 
 public class CalculatorModel implements CalculatorModelInterface {
 	
-	private Double accu;
-	private  Stack<Double> pile;
+
+	private  double accu;
+	private Stack<Double> pile;
 	
 	 // Constructeur par défaut qui crée une pile vide
-    public CalculatorModel() {
-       // accu = 0.0;
-       // pile = new Stack<Double>();
-    }
+
+    public CalculatorModel() { 
+        accu = new Stack<Double>();
+
 
 	@Override
 	public void add() {
