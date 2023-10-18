@@ -1,4 +1,4 @@
-package calculator;
+package model;
 
 import java.util.Stack;
 
@@ -8,9 +8,9 @@ public class CalculatorModel implements CalculatorModelInterface {
 	private  Double accu;
 	private Stack<Double> pile;
 	
-	 // Constructeur par défaut qui crée une pile vide
+// Constructeur par défaut qui crée une pile vide et un accumulateur vide 
 
-    public CalculatorModel() { 
+	public CalculatorModel() { 
         pile = new Stack<Double>();
         accu = 0.0 ;
     }
