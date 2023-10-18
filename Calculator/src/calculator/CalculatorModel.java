@@ -8,7 +8,8 @@ public class CalculatorModel implements CalculatorModelInterface {
 	
 	 // Constructeur par défaut qui crée une pile vide
     public CalculatorModel() {
-        accu = new Stack<Double>();
+       // accu = 0.0;
+       // pile = new Stack<Double>();
     }
 
 	@Override
