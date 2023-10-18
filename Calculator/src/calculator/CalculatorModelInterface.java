@@ -12,7 +12,7 @@ public interface CalculatorModelInterface {
 	
 	public void opposite() ;
 	
-	public void push(double a) ;
+	public void push() ;
 	
 	public Double pop() ;
 	
