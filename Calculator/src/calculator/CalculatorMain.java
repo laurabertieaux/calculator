@@ -6,14 +6,14 @@ public class CalculatorMain {
 
 	public static void main(String[] args) {
 		
-		CalculatorModel a = new CalculatorModel();
+		CalculatorModel pile = new CalculatorModel();
 		
-		a.push(0);
-		a.push(0.5);
-		a.push(90);
+		pile.push();
+		pile.push();
+		pile.push();
 		
-		a.add(); 
-		Double b = a.pop();
+		pile.add(); 
+		Double b = pile.pop();
 		System.out.println(b);
 	}
 
