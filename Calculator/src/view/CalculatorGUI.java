@@ -1,25 +1,33 @@
 package view;
 
 import java.util.List;
+import javafx.application.Application ;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage; 
 
-public class CalculatorGUI implements CalculatorGUIInterface {
 
-	@Override
-	public void affiche() {
-		// TODO Auto-generated method stub
-		
-	}
+public class CalculatorGUI extends Application {
 
-	@Override
-	public void change(String accu) {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        // Charger le fichier FXML
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
+        Parent root = loader.load();
 
-	@Override
-	public void changes(List<Double> stackData) {
-		// TODO Auto-generated method stub
-		
-	}
+        // Créer la scène
+        Scene scene = new Scene(root);
+
+        // Configurer la scène et afficher la fenêtre
+        primaryStage.setTitle("Calculatrice");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
 
 }
