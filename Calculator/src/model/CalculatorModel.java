@@ -12,8 +12,16 @@ public class CalculatorModel implements CalculatorModelInterface {
 
 	public CalculatorModel() { 
         pile = new Stack<Double>();
-        accu = 0.0 ;
+        accu = null ;
     }
+	
+	public Double getaccu() {
+		return accu;
+	}
+	
+	public void setaccu(Double accu) {
+		this.accu = accu;
+	}
         
 
 	@Override
@@ -68,7 +76,9 @@ public class CalculatorModel implements CalculatorModelInterface {
 	@Override
 	public void push() {
 		// TODO Auto-generated method stub
-		pile.push(accu);
+		if (accu != null) {
+			pile.push(accu);	
+		}
 	}
 
 	@Override
