@@ -9,7 +9,7 @@ import model.CalculatorModel;
 public class CalculatorControler implements CalculatorControlerInterface {
 	
 	private CalculatorModel cal = new CalculatorModel();
-	public Label didi = new Label("Initial Text");
+	public Label label1 = new Label("Initial Text");
 	public Label label2 = new Label("Initial Text");
 	public Label label3 = new Label("Initial Text");
 	public Label label4 = new Label("Initial Text");
@@ -165,7 +165,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		label4.setText(X4);
 		label3.setText(X3);
 		label2.setText(X2);
-		didi.setText(X1);
+		label1.setText(X1);
 		cal.pushing(x1);
 		cal.pushing(x2);
 		cal.pushing(x3);
