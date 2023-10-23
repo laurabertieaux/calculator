@@ -3,11 +3,17 @@ package controler;
 import java.util.List;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
 import model.CalculatorModel;
 
 public class CalculatorControler implements CalculatorControlerInterface {
 	
 	private CalculatorModel cal;
+	public Label didi = new Label("Initial Text");
+	public Label label2 = new Label("Initial Text");
+	public Label label3 = new Label("Initial Text");
+	public Label label4 = new Label("Initial Text");
+	public Label label5 = new Label("Initial Text");
 
 	@Override
 	public void change(String accu) {
@@ -21,9 +27,11 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		
 	}
 	public void btn1 (ActionEvent event) {
-		Double ac = cal.getaccu();
-		ac = ac*10 + 1;
-		cal.setaccu(ac);		
+		//Double ac = cal.getaccu();
+		//ac = ac*10 + 1;
+		//cal.setaccu(ac);		
+		didi.setText("coucoi");
+		label2.setText("aaaaa");
 	}
 	
 	public void btn2 (ActionEvent event) {
