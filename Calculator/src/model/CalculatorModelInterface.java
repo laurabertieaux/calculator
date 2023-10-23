@@ -21,5 +21,7 @@ public interface CalculatorModelInterface {
 	public void swap() ;
 	
 	public void clear() ;
+	
+	public void pushing(Double a);
 
 }

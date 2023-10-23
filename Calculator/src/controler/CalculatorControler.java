@@ -27,104 +27,149 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		
 	}
 	public void btn1 (ActionEvent event) {
-		//Double ac = cal.getaccu();
-		//ac = ac*10 + 1;
-		//cal.setaccu(ac);		
-		didi.setText("coucoi");
-		label2.setText("aaaaa");
+		Double ac = cal.getaccu();
+		ac = ac*10 + 1;
+		cal.setaccu(ac);		
+		String al = String.valueOf(ac);
+		label5.setText(al);
 	}
 	
 	public void btn2 (ActionEvent event) {
 		Double ac = cal.getaccu();
 		ac = ac*10 + 2;
 		cal.setaccu(ac);
-		System.out.println(cal.getaccu());
+		String al = String.valueOf(ac);
+		label5.setText(al);
 	}
 	
 	public void btn3 (ActionEvent event) {
 		Double ac = cal.getaccu();
 		ac = ac*10 + 3;
 		cal.setaccu(ac);
-		System.out.println(cal.getaccu());
+		String al = String.valueOf(ac);
+		label5.setText(al);
 	}
 	
 	public void btn4 (ActionEvent event) {
 		Double ac = cal.getaccu();
 		ac = ac*10 + 4;
 		cal.setaccu(ac);
+		String al = String.valueOf(ac);
+		label5.setText(al);
 	}
 	
 	public void btn5 (ActionEvent event) {
 		Double ac = cal.getaccu();
 		ac = ac*10 + 5;
 		cal.setaccu(ac);
+		String al = String.valueOf(ac);
+		label5.setText(al);
 	}
 	
 	public void btn6 (ActionEvent event) {
 		Double ac = cal.getaccu();
 		ac = ac*10 + 6;
 		cal.setaccu(ac);
+		String al = String.valueOf(ac);
+		label5.setText(al);
 	}
 
 	public void btn7 (ActionEvent event) {
 		Double ac = cal.getaccu();
 		ac = ac*10 + 7;
 		cal.setaccu(ac);
+		String al = String.valueOf(ac);
+		label5.setText(al);
 	}
 
 	public void btn8 (ActionEvent event) {
 		Double ac = cal.getaccu();
 		ac = ac*10 + 8;
 		cal.setaccu(ac);
+		String al = String.valueOf(ac);
+		label5.setText(al);
 	}
 	
 	public void btn9 (ActionEvent event) {
 		Double ac = cal.getaccu();
 		ac = ac*10 + 9;
 		cal.setaccu(ac);
+		String al = String.valueOf(ac);
+		label5.setText(al);
 	}
 	
 	public void btn0 (ActionEvent event) {
 		Double ac = cal.getaccu();
 		ac = ac*10;
 		cal.setaccu(ac);
+		String al = String.valueOf(ac);
+		label5.setText(al);
 	}
 	
 	public void mult (ActionEvent event) {
 		cal.multiply();
+		entrons();
 	}
 	
 	public void div (ActionEvent event) {
 		cal.divide();
+		entrons();
 	}
 	
 	public void sum (ActionEvent event) {
 		cal.add();
+		entrons();
 	}
 	
 	public void subs (ActionEvent event) {
 		cal.substract();
+		entrons();
 	}
 	
 	public void oppo (ActionEvent event) {
 		cal.opposite();
+		entrons();
 	}
 	
 	public void enter (ActionEvent event) {
 		cal.push();
-		cal.setaccu(0.0);
+		entrons();
 	}
 	
 	public void clean (ActionEvent event) {
 		cal.clear();
+		entrons();
 	}
 	
 	public void swop (ActionEvent event) {
 		cal.swap();
+		entrons();
 	}
 	
 	public void bye (ActionEvent event) {
 		cal.drop();
+		entrons();
+	}
+	
+	public void entrons() {
+		cal.setaccu(0.0);
+		Double x4 = cal.pop();
+		Double x3 = cal.pop();
+		Double x2 = cal.pop();
+		Double x1 = cal.pop();
+		String X4 = String.valueOf(x4);
+		String X3 = String.valueOf(x3);
+		String X2 = String.valueOf(x2);
+		String X1 = String.valueOf(x1);
+		label5.setText("");
+		label4.setText(X4);
+		label3.setText(X3);
+		label2.setText(X2);
+		didi.setText(X1);
+		cal.pushing(x1);
+		cal.pushing(x2);
+		cal.pushing(x3);
+		cal.pushing(x4);
 	}
 
 }

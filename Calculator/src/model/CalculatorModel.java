@@ -83,7 +83,12 @@ public class CalculatorModel implements CalculatorModelInterface {
 
 	@Override
 	public Double pop() {
-		return pile.pop();
+		if(pile.empty()) {
+			return null;
+		}else {
+			return pile.pop();
+		}
+		
 	}
 
 	@Override
@@ -107,6 +112,12 @@ public class CalculatorModel implements CalculatorModelInterface {
 	public void clear() {
 		// TODO Auto-generated method stub
 		pile.clear();
+		accu =0.0;
+	}
+	
+	public void pushing(Double a) {
+			pile.push(a);	
+
 	}
 	
 }
