@@ -110,6 +110,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	
 	public void enter (ActionEvent event) {
 		cal.push();
+		
 	}
 	
 	public void clean (ActionEvent event) {

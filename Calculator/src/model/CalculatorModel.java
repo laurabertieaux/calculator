@@ -12,7 +12,7 @@ public class CalculatorModel implements CalculatorModelInterface {
 
 	public CalculatorModel() { 
         pile = new Stack<Double>();
-        accu = null ;
+        accu = 0.0 ;
     }
 	
 	public Double getaccu() {
