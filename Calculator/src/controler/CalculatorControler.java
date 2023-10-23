@@ -8,7 +8,7 @@ import model.CalculatorModel;
 
 public class CalculatorControler implements CalculatorControlerInterface {
 	
-	private CalculatorModel cal;
+	private CalculatorModel cal = new CalculatorModel();
 	public Label didi = new Label("Initial Text");
 	public Label label2 = new Label("Initial Text");
 	public Label label3 = new Label("Initial Text");
@@ -38,12 +38,14 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		Double ac = cal.getaccu();
 		ac = ac*10 + 2;
 		cal.setaccu(ac);
+		System.out.println(cal.getaccu());
 	}
 	
 	public void btn3 (ActionEvent event) {
 		Double ac = cal.getaccu();
 		ac = ac*10 + 3;
 		cal.setaccu(ac);
+		System.out.println(cal.getaccu());
 	}
 	
 	public void btn4 (ActionEvent event) {
