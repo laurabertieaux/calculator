@@ -6,7 +6,7 @@ public class CalculatorMain {
 
 	public static void main(String[] args) {
 		
-		CalculatorModel calcul = new CalculatorModel();
+		CalculatorModel cal = new CalculatorModel();
 		
 
 	}

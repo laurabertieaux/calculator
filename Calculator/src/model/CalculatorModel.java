@@ -76,9 +76,9 @@ public class CalculatorModel implements CalculatorModelInterface {
 	@Override
 	public void push() {
 		// TODO Auto-generated method stub
-		if (accu != null) {
+		//if (accu != null) {
 			pile.push(accu);	
-		}
+		//}
 	}
 
 	@Override
