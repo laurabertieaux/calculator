@@ -10,5 +10,5 @@ module Calculator {
 	requires javafx.fxml;
 	requires java.desktop;
 	opens view to javafx.graphics, javafx.fxml ;
-	//opens controler to javafx.fxml;
+	opens controler to javafx.fxml;
 }

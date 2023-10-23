@@ -23,7 +23,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	public void btn1 (ActionEvent event) {
 		Double ac = cal.getaccu();
 		ac = ac*10 + 1;
-		cal.setaccu(ac);
+		cal.setaccu(ac);		
 	}
 	
 	public void btn2 (ActionEvent event) {

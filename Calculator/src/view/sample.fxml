@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="238.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="238.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controler.CalculatorControler">
    <children>
       <GridPane prefHeight="399.0" prefWidth="238.0">
         <columnConstraints>
@@ -48,17 +48,17 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="98.0" prefWidth="77.0" text="1" GridPane.columnIndex="1" />
-                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="77.0" text="2" GridPane.columnIndex="2" />
-                              <Button layoutX="36.0" layoutY="10.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="77.0" text="4" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="77.0" text="5" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="77.0" text="3" GridPane.columnIndex="3" />
-                              <Button layoutX="126.0" layoutY="10.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="77.0" text="6" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                              <Button layoutX="126.0" layoutY="60.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="77.0" text="7" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="77.0" text="8" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="77.0" text="9" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <Button mnemonicParsing="false" onAction="#btn1" prefHeight="98.0" prefWidth="77.0" text="1" GridPane.columnIndex="1" />
+                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#btn2" prefHeight="98.0" prefWidth="77.0" text="2" GridPane.columnIndex="2" />
+                              <Button layoutX="36.0" layoutY="10.0" mnemonicParsing="false" onAction="#btn4" prefHeight="98.0" prefWidth="77.0" text="4" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#btn5" prefHeight="98.0" prefWidth="77.0" text="5" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#btn3" prefHeight="98.0" prefWidth="77.0" text="3" GridPane.columnIndex="3" />
+                              <Button layoutX="126.0" layoutY="10.0" mnemonicParsing="false" onAction="#btn6" prefHeight="98.0" prefWidth="77.0" text="6" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <Button layoutX="126.0" layoutY="60.0" mnemonicParsing="false" onAction="#btn7" prefHeight="98.0" prefWidth="77.0" text="7" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#btn8" prefHeight="98.0" prefWidth="77.0" text="8" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#btn9" prefHeight="98.0" prefWidth="77.0" text="9" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                               <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="77.0" text="AC" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Button layoutX="10.0" layoutY="160.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="77.0" text="0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Button layoutX="10.0" layoutY="160.0" mnemonicParsing="false" onAction="#btn0" prefHeight="98.0" prefWidth="77.0" text="0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                               <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="77.0" text="enter" GridPane.columnIndex="3" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
