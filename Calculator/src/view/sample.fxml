@@ -36,7 +36,7 @@
                   <Label fx:id="label1" prefHeight="77.0" prefWidth="364.0" text="." GridPane.rowIndex="1" />
                   <Label fx:id="label2" prefHeight="85.0" prefWidth="320.0" text="." GridPane.rowIndex="2" />
                   <Label fx:id="label3" prefHeight="71.0" prefWidth="299.0" text="." GridPane.rowIndex="3" />
-                  <Label fx:id="label4" prefHeight="68.0" prefWidth="263.0" text="." GridPane.rowIndex="3" />
+                  <Label fx:id="label4" prefHeight="68.0" prefWidth="263.0" text="." GridPane.rowIndex="4" />
                   <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: MAGENTA;" GridPane.rowIndex="5">
                      <children>
                         <Label fx:id="label5" prefHeight="61.0" prefWidth="353.0" text="." />
