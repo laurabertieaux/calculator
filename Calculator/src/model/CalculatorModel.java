@@ -2,11 +2,15 @@ package model;
 
 import java.util.Stack;
 
+import controler.CalculatorControler;
+import javafx.scene.control.Label;
+
 public class CalculatorModel implements CalculatorModelInterface {
 	
 
 	private  Double accu;
 	private Stack<Double> pile;
+	public Label label5 = new Label("Initial Text");
 	
 // Constructeur par défaut qui crée une pile vide et un accumulateur vide 
 
@@ -56,13 +60,20 @@ public class CalculatorModel implements CalculatorModelInterface {
 	}
 
 	@Override
-	public void divide() {
+	public Double divide() {
 		// TODO Auto-generated method stub
 		double a;
 		double b;
 		a = pile.pop();
 		b = pile.pop();
-		pile.push(b/a);
+		if (a!=0) {
+			pile.push(b/a);
+			return 1. ;
+		}
+		else {
+			return 0.;
+		}
+		
 	}
 
 	@Override

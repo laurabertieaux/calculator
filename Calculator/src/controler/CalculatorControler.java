@@ -112,8 +112,13 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 	
 	public void div (ActionEvent event) {
-		cal.divide();
-		entrons();
+		if (cal.divide()==0) {
+			label5.setText("Erreur : division par 0 impossible");
+		}
+		else {
+			cal.divide();
+			entrons();
+		}
 	}
 	
 	public void sum (ActionEvent event) {
