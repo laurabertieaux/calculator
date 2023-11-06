@@ -112,7 +112,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 	
 	public void div (ActionEvent event) {
-		if (cal.divide()==0) {
+		if (cal.peek()==0) {
 			label5.setText("Erreur : division par 0 impossible");
 		}
 		else {
