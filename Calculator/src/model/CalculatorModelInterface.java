@@ -23,5 +23,7 @@ public interface CalculatorModelInterface {
 	public void clear() ;
 	
 	public void pushing(Double a); 
+	
+	public Double peek();
 
 }
