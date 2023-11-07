@@ -10,7 +10,7 @@ public class CalculatorMain extends Application {
 		 CalculatorGUI st = new CalculatorGUI(primaryStage);
 		 st.go();
 	 }
-
+ 
 	 public static void main(String[] args) {
 	        launch(args);
 	    }
