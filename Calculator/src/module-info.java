@@ -5,6 +5,7 @@
  * 
  */
 module Calculator {
+	exports calculator;
 	requires javafx.graphics;
 	requires javafx.controls;
 	requires javafx.fxml;
