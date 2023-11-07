@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 public class CalculatorModel implements CalculatorModelInterface {
 	
 
-	private  Double accu;
+	private String accu;
 	private Stack<Double> pile;
 	public Label label5 = new Label("Initial Text");
 	
@@ -16,14 +16,14 @@ public class CalculatorModel implements CalculatorModelInterface {
 
 	public CalculatorModel() { 
         pile = new Stack<Double>();
-        accu = 0.0 ;
+        accu = "" ;
     }
 	 
-	public Double getaccu() {
+	public String getaccu() {
 		return accu;
 	}
 	
-	public void setaccu(Double accu) {
+	public void setaccu(String accu) {
 		this.accu = accu;
 	}
         
@@ -88,7 +88,8 @@ public class CalculatorModel implements CalculatorModelInterface {
 	public void push() {
 		// TODO Auto-generated method stub
 		//if (accu != null) {
-			pile.push(accu);	
+		Double d = Double.valueOf(accu);
+			pile.push(d);	
 		//}
 	}
 
@@ -123,7 +124,7 @@ public class CalculatorModel implements CalculatorModelInterface {
 	public void clear() {
 		// TODO Auto-generated method stub
 		pile.clear();
-		accu =0.0;
+		accu = "";
 	}
 	
 	public void pushing(Double a) {

@@ -14,6 +14,10 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	public Label label3 = new Label("Initial Text");
 	public Label label4 = new Label("Initial Text");
 	public Label label5 = new Label("Initial Text");
+	
+	public CalculatorControler() {
+		
+	}
 
 	@Override
 	public void change(String accu) {
@@ -26,84 +30,82 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		// TODO Auto-generated method stub
 		
 	}
-	public void btn1 (ActionEvent event) {
-		Double ac = cal.getaccu();
-		ac = ac*10 + 1;
+	
+	public void pts (ActionEvent event) {
+		String ac = cal.getaccu();
+		ac = ac + ".";
 		cal.setaccu(ac);		
-		String al = String.valueOf(ac);
-		label5.setText(al);
+		label5.setText(ac);
+	}
+	
+	public void btn1 (ActionEvent event) {
+		String ac = cal.getaccu();
+		ac = ac + "1";
+		cal.setaccu(ac);		
+		label5.setText(ac);
 	}
 	
 	public void btn2 (ActionEvent event) {
-		Double ac = cal.getaccu();
-		ac = ac*10 + 2;
-		cal.setaccu(ac);
-		String al = String.valueOf(ac);
-		label5.setText(al);
+		String ac = cal.getaccu();
+		ac = ac + "2";
+		cal.setaccu(ac);		
+		label5.setText(ac);
 	}
 	
 	public void btn3 (ActionEvent event) {
-		Double ac = cal.getaccu();
-		ac = ac*10 + 3;
-		cal.setaccu(ac);
-		String al = String.valueOf(ac);
-		label5.setText(al);
+		String ac = cal.getaccu();
+		ac = ac + "3";
+		cal.setaccu(ac);		
+		label5.setText(ac);
 	}
 	
 	public void btn4 (ActionEvent event) {
-		Double ac = cal.getaccu();
-		ac = ac*10 + 4;
-		cal.setaccu(ac);
-		String al = String.valueOf(ac);
-		label5.setText(al);
+		String ac = cal.getaccu();
+		ac = ac + "4";
+		cal.setaccu(ac);		
+		label5.setText(ac);
 	}
 	
 	public void btn5 (ActionEvent event) {
-		Double ac = cal.getaccu();
-		ac = ac*10 + 5;
-		cal.setaccu(ac);
-		String al = String.valueOf(ac);
-		label5.setText(al);
+		String ac = cal.getaccu();
+		ac = ac + "5";
+		cal.setaccu(ac);		
+		label5.setText(ac);
 	}
 	
 	public void btn6 (ActionEvent event) {
-		Double ac = cal.getaccu();
-		ac = ac*10 + 6;
-		cal.setaccu(ac);
-		String al = String.valueOf(ac);
-		label5.setText(al);
+		String ac = cal.getaccu();
+		ac = ac + "6";
+		cal.setaccu(ac);		
+		label5.setText(ac);
 	}
 
 	public void btn7 (ActionEvent event) {
-		Double ac = cal.getaccu();
-		ac = ac*10 + 7;
-		cal.setaccu(ac);
-		String al = String.valueOf(ac);
-		label5.setText(al);
+		String ac = cal.getaccu();
+		ac = ac + "7";
+		cal.setaccu(ac);		
+		label5.setText(ac);
 	}
 
 	public void btn8 (ActionEvent event) {
-		Double ac = cal.getaccu();
-		ac = ac*10 + 8;
-		cal.setaccu(ac);
-		String al = String.valueOf(ac);
-		label5.setText(al);
+		String ac = cal.getaccu();
+		ac = ac + "8";
+		cal.setaccu(ac);		
+		label5.setText(ac);
 	}
 	
 	public void btn9 (ActionEvent event) {
-		Double ac = cal.getaccu();
-		ac = ac*10 + 9;
-		cal.setaccu(ac);
-		String al = String.valueOf(ac);
-		label5.setText(al);
+		String ac = cal.getaccu();
+		ac = ac + "9";
+		cal.setaccu(ac);		
+		label5.setText(ac);
 	}
 	
 	public void btn0 (ActionEvent event) {
-		Double ac = cal.getaccu();
-		ac = ac*10;
-		cal.setaccu(ac);
-		String al = String.valueOf(ac);
-		label5.setText(al);
+		String ac = cal.getaccu();
+		ac = ac + "0";
+		cal.setaccu(ac);		
+		label5.setText(ac);
 	}
 	
 	public void mult (ActionEvent event) {
@@ -157,7 +159,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 	
 	public void entrons() {
-		cal.setaccu(0.0);
+		cal.setaccu("");
 		Double x4 = cal.pop();
 		Double x3 = cal.pop();
 		Double x2 = cal.pop();
