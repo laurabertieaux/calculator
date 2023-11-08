@@ -8,7 +8,7 @@ public interface CalculatorModelInterface {
 	
 	public void multiply() ;
 	
-	public Double divide() ;
+	public void divide() ;
 	
 	public void opposite() ;
 	

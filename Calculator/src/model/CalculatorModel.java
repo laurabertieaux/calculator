@@ -7,18 +7,20 @@ import controler.CalculatorControler;
 import javafx.scene.control.Label;
 
 public class CalculatorModel implements CalculatorModelInterface {
-	
+
 
 	private String accu;
 	private Stack<Double> pile;
-	
-/**
- *  Constructeur par défaut qui crée une pile vide et un accumulateur vide 
- */
+
+	/**
+	 *  Constructeur par défaut qui crée une pile vide et un accumulateur vide 
+	 */
 	public CalculatorModel() { 
-        pile = new Stack<Double>();
-        accu = "" ;
-    }
+		pile = new Stack<Double>();
+		pile.push(null);
+		pile.push(null);
+		accu = "" ;
+	}
 
 	/**
 	 * Récuperer la valeur de l'accumulateur
@@ -27,7 +29,7 @@ public class CalculatorModel implements CalculatorModelInterface {
 	public String getaccu() {
 		return accu;
 	}
-	
+
 	/**
 	 * Change la valeur de l'accumulateur
 	 * @param accu la nouvelle valeur de l'accumulateur
@@ -35,25 +37,19 @@ public class CalculatorModel implements CalculatorModelInterface {
 	public void setaccu(String accu) {
 		this.accu = accu;
 	}
-        
+
 	/**
 	 * Sommer les deux premiers nombres dans la pile
 	 */
 	@Override
 	public void add() {
-		
-		if (pile.peek()==null) {
-			
-		}else {
+
+		if (check()) {
 			Double a;
 			a = pile.pop();
-			if (pile.peek()==null) {
-				pile.push(a);
-			}else {
-				Double b;
-				b = pile.pop();
-				pile.push(a+b);
-			}
+			Double b;
+			b = pile.pop();
+			pile.push(a+b);
 		}
 	}
 
@@ -63,11 +59,13 @@ public class CalculatorModel implements CalculatorModelInterface {
 	@Override
 	public void substract() {
 
-		double a;
-		double b;
-		a = pile.pop();
-		b = pile.pop();
-		pile.push(b-a);
+		if (check()) {
+			double a;
+			double b;
+			a = pile.pop();
+			b = pile.pop();
+			pile.push(b-a);
+		}
 	}
 
 	/**
@@ -75,33 +73,38 @@ public class CalculatorModel implements CalculatorModelInterface {
 	 */
 	@Override
 	public void multiply() {
-		double a;
-		double b;
-		a = pile.pop();
-		b = pile.pop();
-		pile.push(a*b);
+
+		if (check()) {
+			double a;
+			double b;
+			a = pile.pop();
+			b = pile.pop();
+			pile.push(a*b);
+		}
 	}
 
 	/**
 	 * Divise les deux premiers nombre de la pile
 	 */
 	@Override
-	public Double divide() {
+	public void divide() {
 
-		double a;
-		double b;
-		a = pile.pop();
-		b = pile.pop();
-		if (a!=0) { 		//vérification : le dénominateur doit être différent de 0
-			pile.push(b/a); //réinjecte le résultat de la division dans la pile
-			return 1.;
+		if (check()) {
+			double a;
+			double b;
+			a = pile.pop();
+			b = pile.pop();
+			if (a!=0) { 		//vérification : le dénominateur doit être différent de 0
+				pile.push(b/a); //réinjecte le résultat de la division dans la pile
+				
+			}
+			else {
+				pile.push(b); //sinon on réinjecte les valeurs précédentes dans la pile
+				pile.push(a);
+				
+			}	
 		}
-		else {
-			pile.push(b); //sinon on réinjecte les valeurs précédentes dans la pile
-			pile.push(a);
-			return 0.;
-		}	
-		
+
 	}
 
 	/**
@@ -110,9 +113,11 @@ public class CalculatorModel implements CalculatorModelInterface {
 	@Override
 	public void opposite() {
 
-		double a;
-		a = pile.pop();
-		pile.push(-1*a);
+		if (pile.peek()!=null) {
+			double a;
+			a = pile.pop();
+			pile.push(-1*a);
+		}
 	}
 
 	/**
@@ -120,9 +125,9 @@ public class CalculatorModel implements CalculatorModelInterface {
 	 */
 	@Override
 	public void push() {
-		
+
 		Double d = Double.valueOf(accu);
-			pile.push(d);	
+		pile.push(d);	
 	}
 
 	/**
@@ -135,7 +140,7 @@ public class CalculatorModel implements CalculatorModelInterface {
 		}else {
 			return pile.pop();
 		}
-		
+
 	}
 
 	/**
@@ -152,13 +157,15 @@ public class CalculatorModel implements CalculatorModelInterface {
 	 */
 	@Override
 	public void swap() {
-		
-		double a;
-		double b;
-		a = pile.pop();
-		b = pile.pop();
-		pile.push(a);
-		pile.push(b);
+
+		if (check()) {
+			double a;
+			double b;
+			a = pile.pop();
+			b = pile.pop();
+			pile.push(a);
+			pile.push(b);
+		}
 	}
 
 	/**
@@ -166,46 +173,44 @@ public class CalculatorModel implements CalculatorModelInterface {
 	 */
 	@Override
 	public void clear() {
-		
+
 		pile.clear();
 		accu = "";
 	}
-	
+
 	/**
 	 * Injecte la valeur souhaitée a dans la pile (elle est indépendante de l'accumulateur)
 	 */
 	public void pushing(Double a) {
-			pile.push(a);	
+		pile.push(a);	
 	}
 
 	/**
 	 * Récupère la valeur du premier élément de la pile 
 	 */
 	public Double peek() {
-	
+
 		return pile.peek();
 	}
-	
-	/*
-	public ArrayList<Double> check() {
-		ArrayList<Double> liste = new ArrayList<Double>();
+
+
+	public boolean check() {
+		boolean vf;
 		if (pile.peek()==null) {
-			return null;
+			vf = false;
 		}else {
 			Double a;
 			a = pile.pop();
 			if (pile.peek()==null) {
-				pile.push(a);
-				return null;
+				vf = false;
 			}else {
-				Double b;
-				b = pile.pop();
-				pile.push(a+b);
-				return liste;
+				vf=true;
 			}
+			pile.push(a);
 		}
-		
+		return vf;
+
 	}
-	*/
-	
+
+
 }
