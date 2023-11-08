@@ -103,10 +103,7 @@ public class CalculatorModel implements CalculatorModelInterface {
 				pile.push(b); //sinon on réinjecte les valeurs précédentes dans la pile
 				pile.push(a);
 			}	
-		}else {
-			System.out.println("prout");
 		}
-
 	}
 
 	/**
@@ -190,14 +187,17 @@ public class CalculatorModel implements CalculatorModelInterface {
 	 * Récupère la valeur du premier élément de la pile 
 	 */
 	public Double peek() {
-
 		return pile.peek();
 	}
 
 
+	/**
+	 * Vérifie qu'il y a au moins deux éléments non nuls dans la pile
+	 * @return vf un booléen 
+	 */
 	public boolean check() {
 		boolean vf;
-		if (pile.peek()==null) {
+		if (pile.peek()==null) { 
 			vf = false;
 		}else {
 			Double a;
@@ -210,7 +210,6 @@ public class CalculatorModel implements CalculatorModelInterface {
 			pile.push(a);
 		}
 		return vf;
-
 	}
 
 
