@@ -76,6 +76,7 @@
                               <Button layoutX="10.0" layoutY="160.0" mnemonicParsing="false" onAction="#btn0" prefHeight="98.0" prefWidth="77.0" text="0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                               <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#enter" prefHeight="98.0" prefWidth="77.0" text="enter" GridPane.columnIndex="3" GridPane.rowIndex="3" />
                               <Button mnemonicParsing="false" onAction="#pts" prefHeight="46.0" prefWidth="81.0" text="." GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Button mnemonicParsing="false" onAction="#delete" prefHeight="70.0" prefWidth="95.0" text="delete" GridPane.columnIndex="3" GridPane.rowIndex="4" />
                            </children>
                         </GridPane>
                      </children>

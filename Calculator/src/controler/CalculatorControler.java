@@ -198,6 +198,11 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		cal.push();
 		entrons();
 	}
+	
+	public void delete (ActionEvent event) {
+		cal.setaccu("");
+		entrons();
+	}
 
 	/**
 	 * 
