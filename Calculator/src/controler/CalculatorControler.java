@@ -199,6 +199,11 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		entrons();
 	}
 	
+	/**
+	 * 
+	 * @param event action du bouton "delete"
+	 * on supprime entierement l'accumulateur
+	 */
 	public void delete (ActionEvent event) {
 		cal.setaccu("");
 		entrons();
