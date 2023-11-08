@@ -1,13 +1,12 @@
 package controler;
 
 import java.util.List;
-
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import model.CalculatorModel;
 
 public class CalculatorControler implements CalculatorControlerInterface {
-	
+
 	private CalculatorModel cal;
 	
 	/**
@@ -26,20 +25,22 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	public Label label3 ;
 	public Label label4 ;
 	public Label label5 ;
-	
+
 	/**
-	 * 
+	 * Constructeur de la classe CalculatorControler 
+	 * On créer un nouveau CalculatorModel 
+	 * Ainsi que des nouveaux label : les 5 labels correspondent au 5 zones de notre calculatrice (accumulateur...)
 	 */
 	public CalculatorControler() {
-		 cal = new CalculatorModel();
-		 label1  = new Label("Initial Text");
-		 label2 = new Label("Initial Text");
-		 label3 = new Label("Initial Text");
-		 label4 = new Label("Initial Text");
-		 label5 = new Label("Initial Text");	
+		cal = new CalculatorModel();
+		label1 = new Label("Initial Text");
+		label2 = new Label("Initial Text");
+		label3 = new Label("Initial Text");
+		label4 = new Label("Initial Text");
+		label5 = new Label("Initial Text");	
 	}
 
-	
+
 	/**
 	 * 
 	 * @param event action du bouton "."
@@ -47,7 +48,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	public void pts (ActionEvent event) {
 		btn(".");
 	}
-	
+
 	/**
 	 * 
 	 * @param event action du bouton "1"
@@ -55,7 +56,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	public void btn1 (ActionEvent event) {
 		btn("1");
 	}
-	
+
 	/**
 	 * 
 	 * @param event action du bouton "2"
@@ -63,7 +64,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	public void btn2 (ActionEvent event) {
 		btn("2");
 	}
-	
+
 	/**
 	 * 
 	 * @param event action du bouton "3"
@@ -71,7 +72,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	public void btn3 (ActionEvent event) {
 		btn("3");
 	}
-	
+
 	/**
 	 * 
 	 * @param event action du bouton "4"
@@ -79,7 +80,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	public void btn4 (ActionEvent event) {
 		btn("4");
 	}
-	
+
 	/**
 	 * 
 	 * @param event action du bouton "5"
@@ -87,7 +88,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	public void btn5 (ActionEvent event) {
 		btn("5");
 	}
-	
+
 	/**
 	 * 
 	 * @param event action du bouton "6"
@@ -111,7 +112,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	public void btn8 (ActionEvent event) {
 		btn("8");
 	}
-	
+
 	/**
 	 * 
 	 * @param event action du bouton "9"
@@ -119,7 +120,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	public void btn9 (ActionEvent event) {
 		btn("9");
 	}
-	
+
 	/**
 	 * 
 	 * @param event action du bouton "0"
@@ -127,7 +128,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	public void btn0 (ActionEvent event) {
 		btn("0");
 	}
-	
+
 	/**
 	 * 
 	 * @param event action du bouton "*"
@@ -137,7 +138,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		cal.multiply();
 		entrons();
 	}
-	
+
 	/**
 	 * 
 	 * @param event action du bouton "/"
@@ -145,15 +146,19 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	 * on affiche un texte d'erreur en cas de division par 0
 	 */
 	public void div (ActionEvent event) {
-		if (cal.peek()==0) {
-			label5.setText("Erreur : division par 0 impossible");
-		}
-		else {
-			cal.divide();
-			entrons();
-		}
+		if(cal.peek()==null) {
+			System.out.println("licorne");
+		}else {
+			if (cal.peek()==0.) {
+				label5.setText("Erreur : division par 0 impossible");
+			}
+			else {
+				cal.divide();
+				entrons();
+			}}
+
 	}
-	
+
 	/**
 	 * 
 	 * @param event action du bouton "+"
@@ -163,7 +168,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		cal.add();
 		entrons();
 	}
-	
+
 	/**
 	 * 
 	 * @param event action du bouton "/"
@@ -173,7 +178,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		cal.substract();
 		entrons();
 	}
-	
+
 	/**
 	 * 
 	 * @param event action du bouton "(-)"
@@ -183,7 +188,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		cal.opposite();
 		entrons();
 	}
-	
+
 	/**
 	 * 
 	 * @param event action du bouton "enter"
@@ -193,7 +198,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		cal.push();
 		entrons();
 	}
-	
+
 	/**
 	 * 
 	 * @param event action du bouton "AC"
@@ -203,7 +208,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		cal.clear();
 		entrons();
 	}
-	
+
 	/**
 	 * 
 	 * @param event action du bouton "<>"
@@ -213,7 +218,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		cal.swap();
 		entrons();
 	}
-	
+
 	/**
 	 * 
 	 * @param event action du bouton "bye"
@@ -223,7 +228,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		cal.drop();
 		entrons();
 	}
-	
+
 	/**
 	 * on affiche les dernières valeurs de la pile
 	 */
@@ -247,7 +252,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		cal.pushing(x3);
 		cal.pushing(x4);
 	}
-	
+
 	/**
 	 * Méthode globale qui ajoute à l'accumulateur la valeur du bouton sur lequel on vient de cliquer
 	 * @param val valeur du bouton sur lequel on vient de cliquer 
@@ -258,16 +263,16 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		cal.setaccu(ac);		
 		label5.setText(ac);
 	}
-	
-	@Override
-    public void change(List<Double> stackdata) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    @Override
-    public void change(String accu) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+	@Override
+	public void change(List<Double> stackdata) {
+		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+	}
+
+	@Override
+	public void change(String accu) {
+		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+	}
 }
 
- 
+

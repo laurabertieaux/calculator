@@ -1,10 +1,7 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.Stack;
 
-import controler.CalculatorControler;
-import javafx.scene.control.Label;
+import java.util.Stack;
 
 public class CalculatorModel implements CalculatorModelInterface {
 
@@ -28,6 +25,10 @@ public class CalculatorModel implements CalculatorModelInterface {
 	 */
 	public String getaccu() {
 		return accu;
+	}
+
+	public Stack<Double> getpile(){
+		return pile;
 	}
 
 	/**
@@ -96,13 +97,14 @@ public class CalculatorModel implements CalculatorModelInterface {
 			b = pile.pop();
 			if (a!=0) { 		//vérification : le dénominateur doit être différent de 0
 				pile.push(b/a); //réinjecte le résultat de la division dans la pile
-				
+
 			}
 			else {
 				pile.push(b); //sinon on réinjecte les valeurs précédentes dans la pile
 				pile.push(a);
-				
 			}	
+		}else {
+			System.out.println("prout");
 		}
 
 	}
@@ -148,8 +150,7 @@ public class CalculatorModel implements CalculatorModelInterface {
 	 */
 	@Override
 	public void drop() {
-		Double a;
-		a = pile.pop();
+		Double a = pile.pop();
 	}
 
 	/**
