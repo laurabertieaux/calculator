@@ -9,8 +9,19 @@ import model.CalculatorModel;
 public class CalculatorControler implements CalculatorControlerInterface {
 	
 	private CalculatorModel cal;
-	//PROBLÈME À RÉSOUDRE 
-	private Label label1 ; 
+	
+	/**
+	 * Ici il y a un problème d'encapsulation que nous avons identifié. 
+	 * Lorsque les labels sont "private" les chiffres correspondant aux boutons sur lesquels on vient de cliquer n'apparaissent pas dans les labels. 
+	 * En revanche les chiffres sont stockés dans la valeur de l'accumulateur.
+	 * Le problème semble venir du lien entre sample.fxml et CalculatorControler.
+	 * CalculatorControler peut actualiser les valeurs des label mais sample.fxml n'arrive pas à récuperer cette valeur pour l'afficher.
+	 * Nous avons essayé de le résoudre en utilisant :
+	 * - des getters et setters -> leur utilisation nous a semblé inutile dans sample.fxml et aucune autre classe n'utilise les Labels 
+	 * - des TextField à la place des Label -> le problème était le même
+	 * - l'importation du package controler dans sample.fxml mais les attributs restent privés -> le problème ne change pas
+	 */
+	public Label label1 ; 
 	public Label label2 ;
 	public Label label3 ;
 	public Label label4 ;
@@ -28,18 +39,6 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		 label5 = new Label("Initial Text");	
 	}
 
-	@Override
-	
-	public void change(String accu) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void change(List<Double> stackData) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	/**
 	 * 
@@ -254,6 +253,17 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		ac = ac + val;
 		cal.setaccu(ac);		
 		label5.setText(ac);
+	}
+	
+	@Override
+    public void change(List<Double> stackdata) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void change(String accu) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
+
  
-}
