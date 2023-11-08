@@ -42,7 +42,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 
 
 	/**
-	 * 
+	 * Écrire des nombres à virgule
 	 * @param event action du bouton "."
 	 */
 	public void pts (ActionEvent event) {
@@ -50,7 +50,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 
 	/**
-	 * 
+	 * Ajouter 1 dans l'accumulateur
 	 * @param event action du bouton "1"
 	 */
 	public void btn1 (ActionEvent event) {
@@ -58,7 +58,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 
 	/**
-	 * 
+	 * Ajouter 2 dans l'accumulateur
 	 * @param event action du bouton "2"
 	 */
 	public void btn2 (ActionEvent event) {
@@ -66,7 +66,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 
 	/**
-	 * 
+	 * Ajouter 3 dans l'accumulateur
 	 * @param event action du bouton "3"
 	 */
 	public void btn3 (ActionEvent event) {
@@ -74,7 +74,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 
 	/**
-	 * 
+	 * Ajouter 4 dans l'accumulateur
 	 * @param event action du bouton "4"
 	 */
 	public void btn4 (ActionEvent event) {
@@ -82,7 +82,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 
 	/**
-	 * 
+	 * Ajouter 5 dans l'accumulateur
 	 * @param event action du bouton "5"
 	 */
 	public void btn5 (ActionEvent event) {
@@ -90,7 +90,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 
 	/**
-	 * 
+	 * Ajouter 6 dans l'accumulateur
 	 * @param event action du bouton "6"
 	 */
 	public void btn6 (ActionEvent event) {
@@ -98,7 +98,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 
 	/**
-	 * 
+	 * Ajouter 7 dans l'accumulateur
 	 * @param event action du bouton "7"
 	 */
 	public void btn7 (ActionEvent event) {
@@ -106,7 +106,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 
 	/**
-	 * 
+	 * Ajouter 8 dans l'accumulateur
 	 * @param event action du bouton "8"
 	 */
 	public void btn8 (ActionEvent event) {
@@ -114,7 +114,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 
 	/**
-	 * 
+	 * Ajouter 9 dans l'accumulateur
 	 * @param event action du bouton "9"
 	 */
 	public void btn9 (ActionEvent event) {
@@ -122,7 +122,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 
 	/**
-	 * 
+	 * Ajouter 0 dans l'accumulateur
 	 * @param event action du bouton "0"
 	 */
 	public void btn0 (ActionEvent event) {
@@ -130,9 +130,8 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 
 	/**
-	 * 
-	 * @param event action du bouton "*"
 	 * c'est la multiplication
+	 * @param event action du bouton "*"
 	 */
 	public void mult (ActionEvent event) {
 		cal.multiply();
@@ -140,10 +139,9 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 
 	/**
-	 * 
-	 * @param event action du bouton "/"
 	 * c'est la division
 	 * on affiche un texte d'erreur en cas de division par 0
+	 * @param event action du bouton "/"
 	 */
 	public void div (ActionEvent event) {
 		if(cal.peek()==null) {
@@ -160,9 +158,8 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 
 	/**
-	 * 
-	 * @param event action du bouton "+"
 	 * c'est l'addition
+	 * @param event action du bouton "+"
 	 */
 	public void sum (ActionEvent event) {
 		cal.add();
@@ -170,9 +167,8 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 
 	/**
-	 * 
-	 * @param event action du bouton "/"
 	 * c'est la soustraction
+	 * @param event action du bouton "/"
 	 */
 	public void subs (ActionEvent event) {
 		cal.substract();
@@ -180,9 +176,8 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 
 	/**
-	 * 
-	 * @param event action du bouton "(-)"
 	 * c'est l'opposé
+	 * @param event action du bouton "(-)"
 	 */
 	public void oppo (ActionEvent event) {
 		cal.opposite();
@@ -190,9 +185,8 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 
 	/**
-	 * 
+	 * on rentre la valeur de l'accumulateur dans la pile
 	 * @param event action du bouton "enter"
-	 * on rentre la valeur de l'accumulateur dans a pile
 	 */
 	public void enter (ActionEvent event) {
 		cal.push();
@@ -200,9 +194,8 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 	
 	/**
-	 * 
-	 * @param event action du bouton "delete"
 	 * on supprime entierement l'accumulateur
+	 * @param event action du bouton "delete"
 	 */
 	public void delete (ActionEvent event) {
 		cal.setaccu("");
@@ -210,9 +203,8 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 
 	/**
-	 * 
-	 * @param event action du bouton "AC"
 	 * on efface toute la pile
+	 * @param event action du bouton "AC"
 	 */
 	public void clean (ActionEvent event) {
 		cal.clear();
@@ -220,9 +212,8 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 
 	/**
-	 * 
-	 * @param event action du bouton "<>"
 	 * on permute les 2 dernieres valeurs de la pile
+	 * @param event action du bouton "<>"
 	 */
 	public void swop (ActionEvent event) {
 		cal.swap();
@@ -230,9 +221,8 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 
 	/**
-	 * 
-	 * @param event action du bouton "bye"
 	 * on efface la derniere valeur de la pile
+	 * @param event action du bouton "bye"
 	 */
 	public void bye (ActionEvent event) {
 		cal.drop();
@@ -240,7 +230,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 
 	/**
-	 * on affiche les dernières valeurs de la pile
+	 * Affichage des dernières valeurs de la pile dans les labels 
 	 */
 	public void entrons() {
 		cal.setaccu("");
