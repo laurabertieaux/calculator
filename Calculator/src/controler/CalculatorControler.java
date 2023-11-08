@@ -225,7 +225,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 	
 	/**
-	 * on affiche les dernieres valeurs dela 
+	 * on affiche les dernières valeurs de la pile
 	 */
 	public void entrons() {
 		cal.setaccu("");
@@ -248,6 +248,10 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		cal.pushing(x4);
 	}
 	
+	/**
+	 * Méthode globale qui ajoute à l'accumulateur la valeur du bouton sur lequel on vient de cliquer
+	 * @param val valeur du bouton sur lequel on vient de cliquer 
+	 */
 	public void btn(String val) {
 		String ac = cal.getaccu();
 		ac = ac + val;
