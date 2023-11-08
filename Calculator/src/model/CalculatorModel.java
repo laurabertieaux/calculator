@@ -5,7 +5,6 @@ import java.util.Stack;
 
 public class CalculatorModel implements CalculatorModelInterface {
 
-
 	private String accu;
 	private Stack<Double> pile;
 
@@ -14,7 +13,7 @@ public class CalculatorModel implements CalculatorModelInterface {
 	 */
 	public CalculatorModel() { 
 		pile = new Stack<Double>();
-		pile.push(null);
+		pile.push(null); //on ajoute 2 valeur null a la pile pour aier a verifier si elle est vide
 		pile.push(null);
 		accu = "" ;
 	}
@@ -27,6 +26,10 @@ public class CalculatorModel implements CalculatorModelInterface {
 		return accu;
 	}
 
+	/**
+	 * Récupère la pile 
+	 * @return la pile
+	 */
 	public Stack<Double> getpile(){
 		return pile;
 	}
@@ -39,6 +42,28 @@ public class CalculatorModel implements CalculatorModelInterface {
 		this.accu = accu;
 	}
 
+	/**
+	 * On verifie si la pile contient au moins 2 valeurs
+	 * @return un boolean indiquant s'il y a assez de valeur pour effectuer l'opération
+	 */
+	public boolean check() {
+		boolean vf;
+		if (pile.peek()==null) { //on verifie si la pile contient au moins une valeur
+			vf = false;
+		}else {
+			Double a;
+			a = pile.pop(); //on recupere cette valeur pour verifier les suivantes
+			if (pile.peek()==null) { //on verifie si la pile contient une deuxieme valeur
+				vf = false;
+			}else {
+				vf=true;
+			}
+			pile.push(a); // on reinjecte la premiere valeur
+		}
+		return vf;
+	}
+
+	
 	/**
 	 * Sommer les deux premiers nombres dans la pile
 	 */
@@ -107,12 +132,12 @@ public class CalculatorModel implements CalculatorModelInterface {
 	}
 
 	/**
-	 * Calcul l'opposé du dernier nombre de la pile
+	 * Calcul l'opposé du premier nombre de la pile
 	 */
 	@Override
 	public void opposite() {
 
-		if (pile.peek()!=null) {
+		if (pile.peek()!=null) { //on verifie si la pile n'est pas vide
 			double a;
 			a = pile.pop();
 			pile.push(-1*a);
@@ -125,7 +150,7 @@ public class CalculatorModel implements CalculatorModelInterface {
 	@Override
 	public void push() {
 
-		Double d = Double.valueOf(accu);
+		Double d = Double.valueOf(accu); //on convertie l'accumulateur en Double
 		pile.push(d);	
 	}
 
@@ -134,7 +159,7 @@ public class CalculatorModel implements CalculatorModelInterface {
 	 */
 	@Override
 	public Double pop() {
-		if(pile.empty()) {
+		if(pile.empty()) {  //on verifie que la pile n'est pas vide
 			return null;
 		}else {
 			return pile.pop();
@@ -147,7 +172,7 @@ public class CalculatorModel implements CalculatorModelInterface {
 	 */
 	@Override
 	public void drop() {
-		Double a = pile.pop();
+		Double a = pile.pop(); //on recupere la derniere valeur pour la supprimer
 	}
 
 	/**
@@ -188,28 +213,6 @@ public class CalculatorModel implements CalculatorModelInterface {
 	 */
 	public Double peek() {
 		return pile.peek();
-	}
-
-
-	/**
-	 * Vérifie qu'il y a au moins deux éléments non nuls dans la pile
-	 * @return vf un booléen 
-	 */
-	public boolean check() {
-		boolean vf;
-		if (pile.peek()==null) { 
-			vf = false;
-		}else {
-			Double a;
-			a = pile.pop();
-			if (pile.peek()==null) {
-				vf = false;
-			}else {
-				vf=true;
-			}
-			pile.push(a);
-		}
-		return vf;
 	}
 
 
