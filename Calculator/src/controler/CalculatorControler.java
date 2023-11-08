@@ -14,7 +14,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	public Label label2 ;
 	public Label label3 ;
 	public Label label4 ;
-	private Label label5 ;
+	public Label label5 ;
 	
 	/**
 	 * 
@@ -41,6 +41,10 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		
 	}
 	
+	/**
+	 * 
+	 * @param event action du bouton "."
+	 */
 	public void pts (ActionEvent event) {
 		String ac = cal.getaccu();
 		ac = ac + ".";
@@ -48,6 +52,10 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		label5.setText(ac);
 	}
 	
+	/**
+	 * 
+	 * @param event action du bouton "1"
+	 */
 	public void btn1 (ActionEvent event) {
 		String ac = cal.getaccu();
 		ac = ac + "1";
@@ -55,6 +63,10 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		label5.setText(ac);
 	}
 	
+	/**
+	 * 
+	 * @param event action du bouton "2"
+	 */
 	public void btn2 (ActionEvent event) {
 		String ac = cal.getaccu();
 		ac = ac + "2";
@@ -62,6 +74,10 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		label5.setText(ac);
 	}
 	
+	/**
+	 * 
+	 * @param event action du bouton "3"
+	 */
 	public void btn3 (ActionEvent event) {
 		String ac = cal.getaccu();
 		ac = ac + "3";
@@ -69,6 +85,10 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		label5.setText(ac);
 	}
 	
+	/**
+	 * 
+	 * @param event action du bouton "4"
+	 */
 	public void btn4 (ActionEvent event) {
 		String ac = cal.getaccu();
 		ac = ac + "4";
@@ -76,6 +96,10 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		label5.setText(ac);
 	}
 	
+	/**
+	 * 
+	 * @param event action du bouton "5"
+	 */
 	public void btn5 (ActionEvent event) {
 		String ac = cal.getaccu();
 		ac = ac + "5";
@@ -83,6 +107,10 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		label5.setText(ac);
 	}
 	
+	/**
+	 * 
+	 * @param event action du bouton "6"
+	 */
 	public void btn6 (ActionEvent event) {
 		String ac = cal.getaccu();
 		ac = ac + "6";
@@ -90,6 +118,10 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		label5.setText(ac);
 	}
 
+	/**
+	 * 
+	 * @param event action du bouton "7"
+	 */
 	public void btn7 (ActionEvent event) {
 		String ac = cal.getaccu();
 		ac = ac + "7";
@@ -97,6 +129,10 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		label5.setText(ac);
 	}
 
+	/**
+	 * 
+	 * @param event action du bouton "8"
+	 */
 	public void btn8 (ActionEvent event) {
 		String ac = cal.getaccu();
 		ac = ac + "8";
@@ -104,6 +140,10 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		label5.setText(ac);
 	}
 	
+	/**
+	 * 
+	 * @param event action du bouton "9"
+	 */
 	public void btn9 (ActionEvent event) {
 		String ac = cal.getaccu();
 		ac = ac + "9";
@@ -111,6 +151,10 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		label5.setText(ac);
 	}
 	
+	/**
+	 * 
+	 * @param event action du bouton "0"
+	 */
 	public void btn0 (ActionEvent event) {
 		String ac = cal.getaccu();
 		ac = ac + "0";
@@ -118,11 +162,22 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		label5.setText(ac);
 	}
 	
+	/**
+	 * 
+	 * @param event action du bouton "*"
+	 * c'est la multiplication
+	 */
 	public void mult (ActionEvent event) {
 		cal.multiply();
 		entrons();
 	}
 	
+	/**
+	 * 
+	 * @param event action du bouton "/"
+	 * c'est la division
+	 * on affiche un texte d'erreur en cas de division par 0
+	 */
 	public void div (ActionEvent event) {
 		if (cal.peek()==0) {
 			label5.setText("Erreur : division par 0 impossible");
@@ -133,47 +188,85 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param event action du bouton "+"
+	 * c'est l'addition
+	 */
 	public void sum (ActionEvent event) {
 		cal.add();
 		entrons();
 	}
 	
+	/**
+	 * 
+	 * @param event action du bouton "/"
+	 * c'est la soustraction
+	 */
 	public void subs (ActionEvent event) {
 		cal.substract();
 		entrons();
 	}
 	
+	/**
+	 * 
+	 * @param event action du bouton "(-)"
+	 * c'est l'opposé
+	 */
 	public void oppo (ActionEvent event) {
 		cal.opposite();
 		entrons();
 	}
 	
+	/**
+	 * 
+	 * @param event action du bouton "enter"
+	 * on rentre la valeur de l'accumulateur dans a pile
+	 */
 	public void enter (ActionEvent event) {
 		cal.push();
 		entrons();
 	}
 	
+	/**
+	 * 
+	 * @param event action du bouton "AC"
+	 * on efface toute la pile
+	 */
 	public void clean (ActionEvent event) {
 		cal.clear();
 		entrons();
 	}
 	
+	/**
+	 * 
+	 * @param event action du bouton "<>"
+	 * on permute les 2 dernieres valeurs de la pile
+	 */
 	public void swop (ActionEvent event) {
 		cal.swap();
 		entrons();
 	}
 	
+	/**
+	 * 
+	 * @param event action du bouton "bye"
+	 * on efface la derniere valeur de la pile
+	 */
 	public void bye (ActionEvent event) {
 		cal.drop();
 		entrons();
 	}
 	
+	/**
+	 * on affiche les dernieres valeurs de la pile 
+	 */
 	public void entrons() {
 		cal.setaccu("");
-		Double x4 = cal.pop();
-		Double x3 = cal.pop();
-		Double x2 = cal.pop();
-		Double x1 = cal.pop();
+		Double x4 = cal.peek();
+		Double x3 = cal.peek();
+		Double x2 = cal.peek();
+		Double x1 = cal.peek();
 		String X4 = String.valueOf(x4);
 		String X3 = String.valueOf(x3);
 		String X2 = String.valueOf(x2);
@@ -183,10 +276,6 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		label3.setText(X3);
 		label2.setText(X2);
 		label1.setText(X1);
-		cal.pushing(x1);
-		cal.pushing(x2);
-		cal.pushing(x3);
-		cal.pushing(x4);
 	}
  
 }

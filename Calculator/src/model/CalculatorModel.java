@@ -10,7 +10,6 @@ public class CalculatorModel implements CalculatorModelInterface {
 
 	private String accu;
 	private Stack<Double> pile;
-	public Label label5 = new Label("Initial Text");
 	
 /**
  *  Constructeur par défaut qui crée une pile vide et un accumulateur vide 
@@ -132,10 +131,7 @@ public class CalculatorModel implements CalculatorModelInterface {
 		accu = "";
 	}
 	
-	public void pushing(Double a) {
-			pile.push(a);	
 
-	}
 
 	public Double peek() {
 		// TODO Auto-generated method stub
