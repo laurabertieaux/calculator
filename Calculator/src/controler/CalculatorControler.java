@@ -46,10 +46,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	 * @param event action du bouton "."
 	 */
 	public void pts (ActionEvent event) {
-		String ac = cal.getaccu();
-		ac = ac + ".";
-		cal.setaccu(ac);		
-		label5.setText(ac);
+		btn(".");
 	}
 	
 	/**
@@ -57,10 +54,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	 * @param event action du bouton "1"
 	 */
 	public void btn1 (ActionEvent event) {
-		String ac = cal.getaccu();
-		ac = ac + "1";
-		cal.setaccu(ac);		
-		label5.setText(ac);
+		btn("1");
 	}
 	
 	/**
@@ -68,10 +62,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	 * @param event action du bouton "2"
 	 */
 	public void btn2 (ActionEvent event) {
-		String ac = cal.getaccu();
-		ac = ac + "2";
-		cal.setaccu(ac);		
-		label5.setText(ac);
+		btn("2");
 	}
 	
 	/**
@@ -79,10 +70,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	 * @param event action du bouton "3"
 	 */
 	public void btn3 (ActionEvent event) {
-		String ac = cal.getaccu();
-		ac = ac + "3";
-		cal.setaccu(ac);		
-		label5.setText(ac);
+		btn("3");
 	}
 	
 	/**
@@ -90,10 +78,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	 * @param event action du bouton "4"
 	 */
 	public void btn4 (ActionEvent event) {
-		String ac = cal.getaccu();
-		ac = ac + "4";
-		cal.setaccu(ac);		
-		label5.setText(ac);
+		btn("4");
 	}
 	
 	/**
@@ -101,10 +86,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	 * @param event action du bouton "5"
 	 */
 	public void btn5 (ActionEvent event) {
-		String ac = cal.getaccu();
-		ac = ac + "5";
-		cal.setaccu(ac);		
-		label5.setText(ac);
+		btn("5");
 	}
 	
 	/**
@@ -112,10 +94,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	 * @param event action du bouton "6"
 	 */
 	public void btn6 (ActionEvent event) {
-		String ac = cal.getaccu();
-		ac = ac + "6";
-		cal.setaccu(ac);		
-		label5.setText(ac);
+		btn("6");
 	}
 
 	/**
@@ -123,10 +102,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	 * @param event action du bouton "7"
 	 */
 	public void btn7 (ActionEvent event) {
-		String ac = cal.getaccu();
-		ac = ac + "7";
-		cal.setaccu(ac);		
-		label5.setText(ac);
+		btn("7");
 	}
 
 	/**
@@ -134,10 +110,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	 * @param event action du bouton "8"
 	 */
 	public void btn8 (ActionEvent event) {
-		String ac = cal.getaccu();
-		ac = ac + "8";
-		cal.setaccu(ac);		
-		label5.setText(ac);
+		btn("8");
 	}
 	
 	/**
@@ -145,10 +118,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	 * @param event action du bouton "9"
 	 */
 	public void btn9 (ActionEvent event) {
-		String ac = cal.getaccu();
-		ac = ac + "9";
-		cal.setaccu(ac);		
-		label5.setText(ac);
+		btn("9");
 	}
 	
 	/**
@@ -156,10 +126,7 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	 * @param event action du bouton "0"
 	 */
 	public void btn0 (ActionEvent event) {
-		String ac = cal.getaccu();
-		ac = ac + "0";
-		cal.setaccu(ac);		
-		label5.setText(ac);
+		btn("0");
 	}
 	
 	/**
@@ -281,5 +248,12 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		cal.pushing(x3);
 		cal.pushing(x4);
 	}
+	
+	public void btn(String val) {
+		String ac = cal.getaccu();
+		ac = ac + val;
+		cal.setaccu(ac);		
+		label5.setText(ac);
+}
  
 }
