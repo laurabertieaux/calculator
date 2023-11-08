@@ -12,13 +12,18 @@ public class CalculatorModel implements CalculatorModelInterface {
 	private Stack<Double> pile;
 	public Label label5 = new Label("Initial Text");
 	
-// Constructeur par défaut qui crée une pile vide et un accumulateur vide 
-
+/**
+ *  Constructeur par défaut qui crée une pile vide et un accumulateur vide 
+ */
 	public CalculatorModel() { 
         pile = new Stack<Double>();
         accu = "" ;
     }
-	 
+
+	/**
+	 * 
+	 * @return la valeur de l'acculmulateur 
+	 */
 	public String getaccu() {
 		return accu;
 	}

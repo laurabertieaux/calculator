@@ -8,18 +8,28 @@ import model.CalculatorModel;
 
 public class CalculatorControler implements CalculatorControlerInterface {
 	
-	private CalculatorModel cal = new CalculatorModel();
-	public Label label1 = new Label("Initial Text");
-	public Label label2 = new Label("Initial Text");
-	public Label label3 = new Label("Initial Text");
-	public Label label4 = new Label("Initial Text");
-	public Label label5 = new Label("Initial Text");
+	private CalculatorModel cal;
+	//PROBLÈME À RÉSOUDRE 
+	private Label label1 ; 
+	public Label label2 ;
+	public Label label3 ;
+	public Label label4 ;
+	private Label label5 ;
 	
+	/**
+	 * 
+	 */
 	public CalculatorControler() {
-		
+		 cal = new CalculatorModel();
+		 label1  = new Label("Initial Text");
+		 label2 = new Label("Initial Text");
+		 label3 = new Label("Initial Text");
+		 label4 = new Label("Initial Text");
+		 label5 = new Label("Initial Text");	
 	}
 
 	@Override
+	
 	public void change(String accu) {
 		// TODO Auto-generated method stub
 		
