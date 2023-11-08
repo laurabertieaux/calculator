@@ -259,14 +259,14 @@ public class CalculatorControler implements CalculatorControlerInterface {
 	}
 	
 	/**
-	 * on affiche les dernieres valeurs de la pile 
+	 * on affiche les dernieres valeurs dela 
 	 */
 	public void entrons() {
 		cal.setaccu("");
-		Double x4 = cal.peek();
-		Double x3 = cal.peek();
-		Double x2 = cal.peek();
-		Double x1 = cal.peek();
+		Double x4 = cal.pop();
+		Double x3 = cal.pop();
+		Double x2 = cal.pop();
+		Double x1 = cal.pop();
 		String X4 = String.valueOf(x4);
 		String X3 = String.valueOf(x3);
 		String X2 = String.valueOf(x2);
@@ -276,6 +276,10 @@ public class CalculatorControler implements CalculatorControlerInterface {
 		label3.setText(X3);
 		label2.setText(X2);
 		label1.setText(X1);
+		cal.pushing(x1);
+		cal.pushing(x2);
+		cal.pushing(x3);
+		cal.pushing(x4);
 	}
  
 }

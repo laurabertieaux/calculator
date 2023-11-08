@@ -131,7 +131,10 @@ public class CalculatorModel implements CalculatorModelInterface {
 		accu = "";
 	}
 	
+	public void pushing(Double a) {
+			pile.push(a);	
 
+	}
 
 	public Double peek() {
 		// TODO Auto-generated method stub
